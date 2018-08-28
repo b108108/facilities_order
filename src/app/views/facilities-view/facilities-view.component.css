@@ -1,0 +1,35 @@
+.container {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color:  #A5A5A5;
+  border: 1px solid darkslategray;
+}
+
+.facilities-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  padding-right: 16px;
+}
+
+.radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+.selected-value {
+  margin: 15px 0;
+}

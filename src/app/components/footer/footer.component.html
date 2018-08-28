@@ -1,0 +1,6 @@
+<div class="footer-wrapper">
+  <div class="group-button">
+    <button class="button" mat-button *ngIf="_isShowBack" (click)="pressButton(-1)">Back</button>
+    <button class="button" mat-button *ngIf="_isShowNext" [disabled]="!isAccess" (click)="pressButton(1)">{{titleNext}}</button>
+  </div>
+</div>

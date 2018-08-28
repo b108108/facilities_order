@@ -1,0 +1,11 @@
+.container {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #A5A5A5;
+  border: 1px solid darkslategray;
+}

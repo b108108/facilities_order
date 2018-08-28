@@ -1,0 +1,28 @@
+<div class="container">
+  <app-header [titleHeader]="headerText"></app-header>
+
+  <mat-form-field class="full-width">
+    <input matInput
+           [min]="minDate"
+           [max]="maxDate"
+           [matDatepickerFilter]="myFilter"
+           [matDatepicker]="picker"
+           [(ngModel)]=selectedDate
+           [value]=selectedDate
+           placeholder="Choose a date"
+           (dateChange)="changeDate($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select [(value)]="selectedTime" (selectionChange)="changeTime(event)" placeholder="Choose a time:">
+      <mat-option *ngFor="let item of timesList" value={{item.viewValue}}>
+        {{item.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-footer [isAccess]=isAccess (result)="checkNextStep($event)"></app-footer>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="container">
+  <app-header [titleHeader]="headerText"></app-header>
+
+  <div class="form-control" [formGroup]="infoForm">
+
+    <mat-form-field>
+      <input matInput
+             type="text"
+             formControlName="fullName"
+             [pattern]="namePattern"
+             placeholder="Full name"
+             maxlength="20"
+             required
+             [(ngModel)]=fullName>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             type="text"
+             formControlName="latitude"
+             [textMask]="{mask: coordinateMask}"
+             [pattern]="coordinate"
+             placeholder="Latitude"
+             maxlength="10"
+             required
+             [(ngModel)]=latitude>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             type="text"
+             formControlName="longitude"
+             [textMask]="{mask: coordinateMask}"
+             [pattern]="coordinate"
+             placeholder="Longitude"
+             maxlength="10"
+             required
+             [(ngModel)]=longitude>
+    </mat-form-field>
+
+    <!--<re-captcha formControlName="recaptchaReactive"></re-captcha>-->
+    <!--<div class="g-recaptcha" data-sitekey="6Lc52mwUAAAAADK73Ra4b-oBbf29QS0Nzh_aRTAz"></div>-->
+
+    <!--<re-captcha>-->
+      <!--[(ngModel)]="grecaptcha"-->
+      <!--formControlName="grecaptcha"-->
+      <!--name="grecaptcha"-->
+      <!--required-->
+      <!--siteKey="6Lc52mwUAAAAADK73Ra4b-oBbf29QS0Nzh_aRTAz"-->
+      <!--(resolved)="resolved($event)">-->
+    <!--</re-captcha>-->
+
+  </div>
+
+  <app-footer [isAccess]=!infoForm.invalid (result)="checkNextStep($event)"></app-footer>
+
+</div>

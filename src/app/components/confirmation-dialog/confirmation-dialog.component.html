@@ -1,0 +1,43 @@
+<div class="dialog-wrapper">
+  <div class="custom-modal confirm-modal">
+    <div class="header-container">
+      <div class="title">{{confirmTitle}}</div>
+    </div>
+
+    <div class="spent-time">
+      <span>You spent time: {{spentTime.hours}}:{{spentTime.minutes}}:{{spentTime.seconds}}</span>
+    </div>
+
+    <div class="info-container">
+      <div class="field">
+        <span class="text">
+          <span>Full name:</span>
+        </span>
+        <span class="content">
+          <span>{{data.fullName}}</span>
+        </span>
+      </div>
+      <div class="field">
+        <span class="text">
+          <span>Latitude:</span>
+        </span>
+        <span class="content">
+          <span>{{data.latitude}}</span>
+        </span>
+      </div>
+      <div class="field">
+        <span class="text">
+         <span>Longitude:</span>
+        </span>
+        <span class="content">
+          <span>{{data.longitude}}</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="buttons-block">
+      <div  class="button" (click)="dialogRef.close(false)">Cancel</div>
+      <div class="button" (click)="dialogRef.close(true)">Confirm</div>
+    </div>
+  </div>
+</div>

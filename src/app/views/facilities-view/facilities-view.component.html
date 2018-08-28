@@ -1,0 +1,17 @@
+<div class="container">
+  <app-header [titleHeader]="headerText"></app-header>
+
+  <div class="facilities-wrapper" [formGroup]="radioForm">
+    <mat-radio-group class="radio-group" [value]=selected formControlName="options" (change)="changeDate($event)">
+      <mat-radio-button
+        class="radio-button"
+        value={{elem}}
+        *ngFor="let item of listItem; let elem = index">
+        {{item.name}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <app-footer [isAccess]=isAccess (result)="checkNextStep($event)"></app-footer>
+</div>
+
